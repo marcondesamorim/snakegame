@@ -11,6 +11,7 @@
 	</p>
 </blockquote>
 <h3<Código adicionado em script.js</h3>
+
 ```js
 //Desenha o veneno
 function drawPoison(){
@@ -18,6 +19,7 @@ function drawPoison(){
     context.fillRect(poison.x, poison.y, box, box)
 }
 ```
+
 ```js
 //Define a posição do veneno
 let poison={
@@ -25,6 +27,7 @@ let poison={
     y: Math.floor(Math.random() * 15 + 1) * box
 }
 ```
+
 ```js
 //Verifica se a cobrinha comeu o veneno
 if(snake[0].x == poison.x && snake[0].y == poison.y){
@@ -32,10 +35,13 @@ if(snake[0].x == poison.x && snake[0].y == poison.y){
     alert('Game Over - comeu veneno :(');
 }
 ```
+
 ```js
 drawPoison(); //Chama a função que desenha o veneno
 ```
+
 <h3>Código modificado em index.js</h3>
+
 ```js
 alert('Game Over :(') -> alert('Game Over - mordeu o rabo :(')
 ```
