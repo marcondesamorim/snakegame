@@ -14,6 +14,7 @@ let food ={
     y: Math.floor(Math.random() * 15 + 1) * box
 }
 
+//Define a posição do veneno
 let poison={
     x: Math.floor(Math.random() * 15 + 1) * box,
     y: Math.floor(Math.random() * 15 + 1) * box
@@ -36,6 +37,7 @@ function drawFood (){
     context.fillRect(food.x, food.y, box, box);
 }
 
+//Desenha o veneno
 function drawPoison(){
     context.fillStyle = "black";
     context.fillRect(poison.x, poison.y, box, box)
@@ -43,7 +45,6 @@ function drawPoison(){
 
 
 document.addEventListener('keydown', update);
-
 function update(event){
     if(event.keyCode == 37 && direction != 'right') direction = 'left';
     if(event.keyCode == 38 && direction != 'down')  direction = 'up';
@@ -52,6 +53,7 @@ function update(event){
 }
 
 function iniciarJogo(){  
+    //Verifica se a cobrinha comeu o veneno
     if(snake[0].x == poison.x && snake[0].y == poison.y){
         clearInterval(jogo);
         alert('Game Over - comeu veneno :(');
@@ -69,11 +71,10 @@ function iniciarJogo(){
         }
     }
     
-
     criarBG();
     criarCobrinha();
     drawFood();
-    drawPoison();
+    drawPoison(); //Chama a função que desenha o veneno
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y
@@ -96,11 +97,6 @@ function iniciarJogo(){
     }
 
     snake.unshift(newHead);
-
-    if (morreu){
-        
-    }
-    
 }
 
 let jogo = setInterval(iniciarJogo, 100);
