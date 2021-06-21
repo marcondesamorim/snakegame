@@ -4,9 +4,9 @@
 
 ## Contribuições
 
-	O jogo da cobrinha era encerrado quando a cobra mordeia a sí mesma, adicionei uma condição de ter um veneno no jogo, caso a cobrinha coma o veneno ela também morre e o jogo acaba.
+	O jogo da cobrinha era encerrado quando a cobra mordeia a sí mesma, adicionei uma condição de ter um veneno no jogo, caso a cobrinha coma o veneno ela também morre e o jogo acaba. Além disso foi modificado a mensagem de alerta que informa o fim do jogo, diferenciando a morte por comer veneno ou morde-se a sí propria.
 
-### Código adicionado em index.html
+### Código adicionado em script.js
 
 ```js
 //Desenha o veneno
@@ -16,33 +16,29 @@ function drawPoison(){
 }
 ```
 
+´´´js
+//Define a posição do veneno
+let poison={
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
+´´´
 
-### Código adicionado em main.css
+´´´js
+//Verifica se a cobrinha comeu o veneno
+if(snake[0].x == poison.x && snake[0].y == poison.y){
+    clearInterval(jogo);
+    alert('Game Over - comeu veneno :(');
+}
+´´´
 
-```css
-   .item div{
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background: black;
-        color: white;
-        margin-bottom: 5px;
-        font-family: Arial, Helvetica, sans-serif;
-        opacity: 0;
-        visibility: hidden;
-        -webkit-transition: visibility 0s, opacity 0.5s linear; 
-        transition: visibility 0s, opacity 0.5s linear;
-   }
-   
-   .item:hover{
-        cursor: pointer;
-   }
-   
-   .item:hover div{
-        width: 100%;
-        padding: 8px 15px;
-        visibility: visible;
-        opacity: 0.7; 
-   }
+´´´js
+drawPoison(); //Chama a função que desenha o veneno
+´´´
+
+### Código modificado em index.js
+
+```js
+alert('Game Over :(') -> alert('Game Over - mordeu o rabo :(')
 ```
 
