@@ -2,9 +2,13 @@
 
 	Já pensou em criar seu próprio jogo do zero? Aprenda a desenvolver de forma simples o clássico jogo da cobrinha utilizando HTML, CSS e JavaScript.
 
-## Contribuições
+<h2>Contribuições</h2>
 
+<blockquote>
+	<p>
 	O jogo da cobrinha era encerrado quando a cobra mordeia a sí mesma, adicionei uma condição de ter um veneno no jogo, caso a cobrinha coma o veneno ela também morre e o jogo acaba. Além disso foi modificado a mensagem de alerta que informa o fim do jogo, diferenciando a morte por comer veneno ou morde-se a sí propria.
+	</p>
+</blockquote>
 
 ### Código adicionado em script.js
 
