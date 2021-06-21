@@ -16,25 +16,25 @@ function drawPoison(){
 }
 ```
 
-´´´js
+```js
 //Define a posição do veneno
 let poison={
     x: Math.floor(Math.random() * 15 + 1) * box,
     y: Math.floor(Math.random() * 15 + 1) * box
 }
-´´´
+```
 
-´´´js
+```js
 //Verifica se a cobrinha comeu o veneno
 if(snake[0].x == poison.x && snake[0].y == poison.y){
     clearInterval(jogo);
     alert('Game Over - comeu veneno :(');
 }
-´´´
+```
 
-´´´js
+```js
 drawPoison(); //Chama a função que desenha o veneno
-´´´
+```
 
 ### Código modificado em index.js
 
